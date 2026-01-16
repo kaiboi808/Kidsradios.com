@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Alert Tones | Kids Radio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">📻</span>
+                <span>KIDS RADIO</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-icon"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="frequencies.html">Frequencies</a></li>
+                <li><a href="alert-tones.html" class="active">Alert Tones</a></li>
+                <li><a href="know-your-zone.html">Know Your Zone</a></li>
+                <li><a href="camping-safety.html">Camping Safety</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <span class="page-hero-icon">🔔</span>
+        <h1>Weather Alert Tones</h1>
+        <p class="page-subtitle">Learn to recognize the sounds that warn you of danger</p>
+    </section>
+
+    <main>
+        <!-- Introduction -->
+        <section class="content-card">
+            <h2>Why Learn Alert Tones?</h2>
+            <p>Weather radios use special <strong>audio tones</strong> to get your attention before important messages. If you hear these tones, you should <strong>stop and listen</strong> - it could be a life-saving warning!</p>
+            <p>Click the play buttons below to hear each tone. Make sure your volume is on!</p>
+        </section>
+
+        <!-- Tone Cards Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+
+            <!-- 1050 Hz Attention Signal -->
+            <div class="tone-card">
+                <h3>1050 Hz Attention Signal</h3>
+                <p>The main alert tone - a steady high-pitched beep that plays for 8-10 seconds before important weather alerts.</p>
+
+                <div class="waveform-display" id="wave1">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                </div>
+
+                <button class="play-tone-btn" id="btn1" onclick="playTone('attention', 'btn1', 'wave1')">
+                    ▶️
+                </button>
+
+                <p style="margin-top: 1rem; font-size: 0.85rem;"><strong>When you hear it:</strong> Pay attention! Important weather info is coming.</p>
+            </div>
+
+            <!-- SAME Tone -->
+            <div class="tone-card">
+                <h3>SAME Digital Burst</h3>
+                <p>A rapid buzzing/chirping sound that carries digital data to activate weather radios automatically.</p>
+
+                <div class="waveform-display" id="wave2">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                </div>
+
+                <button class="play-tone-btn" id="btn2" onclick="playTone('same', 'btn2', 'wave2')">
+                    ▶️
+                </button>
+
+                <p style="margin-top: 1rem; font-size: 0.85rem;"><strong>When you hear it:</strong> Your radio is receiving encoded alert data.</p>
+            </div>
+
+            <!-- End of Message -->
+            <div class="tone-card">
+                <h3>End of Message (EOM)</h3>
+                <p>Three short beeps that signal the end of an emergency message. The alert is over.</p>
+
+                <div class="waveform-display" id="wave3">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                </div>
+
+                <button class="play-tone-btn" id="btn3" onclick="playTone('eom', 'btn3', 'wave3')">
+                    ▶️
+                </button>
+
+                <p style="margin-top: 1rem; font-size: 0.85rem;"><strong>When you hear it:</strong> The emergency broadcast has ended.</p>
+            </div>
+
+            <!-- Warning Siren -->
+            <div class="tone-card">
+                <h3>Warning Siren Pattern</h3>
+                <p>An ascending/descending siren used by some outdoor warning systems and civil defense alerts.</p>
+
+                <div class="waveform-display" id="wave4">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                </div>
+
+                <button class="play-tone-btn" id="btn4" onclick="playTone('siren', 'btn4', 'wave4')">
+                    ▶️
+                </button>
+
+                <p style="margin-top: 1rem; font-size: 0.85rem;"><strong>When you hear it:</strong> Seek shelter immediately!</p>
+            </div>
+        </div>
+
+        <!-- How Alert System Works -->
+        <section class="content-card">
+            <h2>How the Alert System Works</h2>
+            <p>When the National Weather Service issues an alert, here's what happens:</p>
+            <ol>
+                <li><strong>SAME Header</strong> - The digital burst plays 3 times (about 10 seconds total)</li>
+                <li><strong>1050 Hz Attention Tone</strong> - The steady beep plays for 8-10 seconds</li>
+                <li><strong>Voice Message</strong> - The actual weather warning is read by a forecaster or computer voice</li>
+                <li><strong>SAME EOM</strong> - Three short tones signal "End of Message"</li>
+            </ol>
+            <p>Weather radios with SAME technology will <strong>automatically turn on</strong> when they detect the digital header for your programmed location!</p>
+        </section>
+
+        <!-- Listening Game -->
+        <section class="game-section">
+            <h3>Can You Identify the Tone?</h3>
+            <p style="color: #a8d86e; margin-bottom: 1rem;">Listen to a tone and guess which one it is. Get 5 correct to earn your badge!</p>
+
+            <div class="game-score">
+                Score: <span id="gameScore">0</span> / 5
+            </div>
+
+            <button class="game-play-btn" id="gamePlayBtn" onclick="playGameTone()">
+                🔊 Play Mystery Tone
+            </button>
+
+            <div class="game-options" id="gameOptions">
+                <button class="game-option-btn" onclick="checkGameAnswer('attention')">1050 Hz Attention</button>
+                <button class="game-option-btn" onclick="checkGameAnswer('same')">SAME Digital Burst</button>
+                <button class="game-option-btn" onclick="checkGameAnswer('eom')">End of Message</button>
+                <button class="game-option-btn" onclick="checkGameAnswer('siren')">Warning Siren</button>
+            </div>
+
+            <div id="gameResult" style="margin-top: 1rem; color: #c8e6a0;"></div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="quiz-section" id="toneQuiz">
+            <h3>Test Your Knowledge!</h3>
+            <p style="color: #a8d86e; margin-bottom: 1rem;">Answer 3 questions correctly to earn your <strong>Alert Expert Badge</strong>!</p>
+
+            <div id="quizContainer">
+                <div class="quiz-question" id="questionText">Loading question...</div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-result" id="quizResult"></div>
+            </div>
+
+            <div id="quizProgress" style="text-align: center; margin-top: 1rem; color: #a8d86e;">
+                Question <span id="currentQ">1</span> of 3 | Score: <span id="score">0</span>/3
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="footer-icon">🕯️</span>
+                <span>KIDS RADIO</span>
+            </div>
+            <p class="footer-tagline">Scout Edition - Knowledge Saves Lives. Be Prepared.</p>
+            <p class="footer-memorial">In Memory of Lahaina - August 8, 2023</p>
+            <p class="copyright">&copy; 2024 KidsRadios.com - Wilderness Weather Training</p>
+        </div>
+    </footer>
+
+    <script src="tones.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Play tone with visual feedback
+        function playTone(type, btnId, waveId) {
+            const btn = document.getElementById(btnId);
+            const wave = document.getElementById(waveId);
+
+            // Stop any currently playing tones
+            toneGenerator.stop();
+            document.querySelectorAll('.play-tone-btn').forEach(b => b.classList.remove('playing'));
+            document.querySelectorAll('.waveform-display').forEach(w => w.classList.remove('active'));
+
+            btn.classList.add('playing');
+            wave.classList.add('active');
+            btn.innerHTML = '⏹️';
+
+            toneGenerator.playByType(type, () => {
+                btn.classList.remove('playing');
+                wave.classList.remove('active');
+                btn.innerHTML = '▶️';
+            });
+        }
+
+        // Listening Game
+        let gameScore = 0;
+        let currentGameTone = '';
+        let gameActive = false;
+
+        function playGameTone() {
+            if (gameScore >= 5) return;
+
+            const playBtn = document.getElementById('gamePlayBtn');
+            playBtn.disabled = true;
+            playBtn.textContent = '🔊 Playing...';
+
+            currentGameTone = toneGenerator.getRandomToneType();
+            gameActive = true;
+
+            document.getElementById('gameResult').textContent = '';
+
+            toneGenerator.playByType(currentGameTone, () => {
+                playBtn.disabled = false;
+                playBtn.textContent = '🔊 Play Again';
+            });
+        }
+
+        function checkGameAnswer(answer) {
+            if (!gameActive) {
+                document.getElementById('gameResult').textContent = 'Click "Play Mystery Tone" first!';
+                return;
+            }
+
+            gameActive = false;
+            const resultDiv = document.getElementById('gameResult');
+
+            if (answer === currentGameTone) {
+                gameScore++;
+                document.getElementById('gameScore').textContent = gameScore;
+                resultDiv.innerHTML = '<span style="color: #7ed321;">Correct! That was the ' + toneGenerator.getToneName(currentGameTone) + '</span>';
+
+                if (gameScore >= 5) {
+                    resultDiv.innerHTML += '<br><br><span style="color: #f0b429; font-size: 1.2rem;">🏅 Amazing! You can identify all the alert tones!</span>';
+                    document.getElementById('gamePlayBtn').textContent = '🎉 Game Complete!';
+                    document.getElementById('gamePlayBtn').disabled = true;
+                }
+            } else {
+                resultDiv.innerHTML = '<span style="color: #ff8888;">Not quite. That was the ' + toneGenerator.getToneName(currentGameTone) + '</span>';
+            }
+
+            document.getElementById('gamePlayBtn').textContent = '🔊 Play Mystery Tone';
+        }
+
+        // Quiz System
+        const toneQuestions = [
+            {
+                question: "What frequency is the main weather alert attention signal?",
+                options: ["500 Hz", "1050 Hz", "2000 Hz", "3000 Hz"],
+                correct: 1
+            },
+            {
+                question: "What does SAME stand for?",
+                options: ["Standard Alert Message Encoding", "Specific Area Message Encoding", "Special Alert Mode Emergency", "System Alert Message Emergency"],
+                correct: 1
+            },
+            {
+                question: "How many beeps does the End of Message (EOM) signal have?",
+                options: ["1", "2", "3", "5"],
+                correct: 2
+            },
+            {
+                question: "What happens when a weather radio receives a SAME header for your area?",
+                options: ["It turns off", "It automatically turns on and alerts you", "It plays music", "Nothing"],
+                correct: 1
+            },
+            {
+                question: "How long does the 1050 Hz attention signal typically play?",
+                options: ["1-2 seconds", "8-10 seconds", "30 seconds", "1 minute"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let quizScore = 0;
+        let questionsAnswered = 0;
+        let shuffledQuestions = [];
+
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function initQuiz() {
+            shuffledQuestions = shuffleArray(toneQuestions).slice(0, 3);
+            currentQuestion = 0;
+            quizScore = 0;
+            questionsAnswered = 0;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = shuffledQuestions[currentQuestion];
+            document.getElementById('questionText').textContent = q.question;
+            document.getElementById('currentQ').textContent = currentQuestion + 1;
+            document.getElementById('score').textContent = quizScore;
+
+            const optionsDiv = document.getElementById('quizOptions');
+            optionsDiv.innerHTML = '';
+
+            q.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = option;
+                btn.onclick = () => checkQuizAnswer(index);
+                optionsDiv.appendChild(btn);
+            });
+
+            document.getElementById('quizResult').className = 'quiz-result';
+            document.getElementById('quizResult').innerHTML = '';
+        }
+
+        function checkQuizAnswer(selected) {
+            const q = shuffledQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+            const resultDiv = document.getElementById('quizResult');
+
+            options.forEach((opt, i) => {
+                opt.classList.add('disabled');
+                if (i === q.correct) {
+                    opt.classList.add('correct');
+                } else if (i === selected && selected !== q.correct) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            if (selected === q.correct) {
+                quizScore++;
+                document.getElementById('score').textContent = quizScore;
+                resultDiv.innerHTML = "Correct! Great job!";
+                resultDiv.className = 'quiz-result show success';
+            } else {
+                resultDiv.innerHTML = "Not quite. The correct answer is highlighted.";
+                resultDiv.className = 'quiz-result show fail';
+            }
+
+            questionsAnswered++;
+
+            if (questionsAnswered < 3) {
+                setTimeout(() => {
+                    currentQuestion++;
+                    showQuestion();
+                }, 2000);
+            } else {
+                setTimeout(() => {
+                    showFinalResult();
+                }, 2000);
+            }
+        }
+
+        function showFinalResult() {
+            const container = document.getElementById('quizContainer');
+
+            if (quizScore === 3) {
+                container.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🏅</div>
+                        <h3 style="color: #7ed321;">Congratulations!</h3>
+                        <p style="color: #c8e6a0;">You got all 3 questions correct!</p>
+                        <p style="color: #f0b429; font-size: 1.2rem; margin-top: 1rem;">You earned the Alert Expert Badge!</p>
+                        <button class="next-question-btn" onclick="initQuiz()">Try Again</button>
+                    </div>
+                `;
+                localStorage.setItem('badge_alert', 'true');
+                createConfetti();
+            } else {
+                container.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">📚</div>
+                        <h3 style="color: #f0b429;">Good Try!</h3>
+                        <p style="color: #c8e6a0;">You got ${quizScore} out of 3 correct.</p>
+                        <p style="color: #a8d86e; margin-top: 1rem;">Listen to the tones above and try again!</p>
+                        <button class="next-question-btn" onclick="initQuiz()">Try Again</button>
+                    </div>
+                `;
+            }
+        }
+
+        function createConfetti() {
+            const colors = ['#f0b429', '#7ed321', '#ff6b6b', '#4ecdc4', '#ffe066'];
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Initialize quiz when page loads
+        document.addEventListener('DOMContentLoaded', initQuiz);
+    </script>
+</body>
+</html>

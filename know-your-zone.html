@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Zone - FIPS Codes | Kids Radio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">📻</span>
+                <span>KIDS RADIO</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-icon"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="frequencies.html">Frequencies</a></li>
+                <li><a href="alert-tones.html">Alert Tones</a></li>
+                <li><a href="know-your-zone.html" class="active">Know Your Zone</a></li>
+                <li><a href="camping-safety.html">Camping Safety</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <span class="page-hero-icon">🗺️</span>
+        <h1>Know Your Zone</h1>
+        <p class="page-subtitle">Find your FIPS code and program your weather radio</p>
+    </section>
+
+    <main>
+        <!-- Introduction -->
+        <section class="content-card">
+            <h2>What is a FIPS Code?</h2>
+            <p><strong>FIPS</strong> stands for <strong>Federal Information Processing Standards</strong>. Every county in the United States has a unique 5-digit code that identifies it.</p>
+            <p>Weather radios use FIPS codes to know which alerts to broadcast. When you program your county's FIPS code into your weather radio, it will <strong>only alert you</strong> for warnings in your area!</p>
+
+            <h3>How FIPS Codes Work</h3>
+            <ul>
+                <li>First 2 digits = State code (example: 48 = Texas)</li>
+                <li>Last 3 digits = County code (example: 201 = Harris County)</li>
+                <li>Full code: 48201 = Harris County, Texas (Houston area)</li>
+            </ul>
+        </section>
+
+        <!-- Zone Lookup Tool -->
+        <section class="zone-lookup">
+            <h3>Find Your FIPS Code</h3>
+
+            <!-- Method 1: State Dropdown -->
+            <div class="lookup-row">
+                <select id="stateSelect" onchange="loadCounties()">
+                    <option value="">Select your state...</option>
+                </select>
+                <select id="countySelect" onchange="showFIPSResult()" disabled>
+                    <option value="">Select your county...</option>
+                </select>
+            </div>
+
+            <!-- Method 2: Search -->
+            <div class="lookup-row">
+                <input type="text" id="searchInput" placeholder="Or search by city/county name..." oninput="searchLocation()">
+            </div>
+
+            <!-- Search Results -->
+            <div id="searchResults" style="display: none; margin-bottom: 1rem;"></div>
+
+            <!-- FIPS Result -->
+            <div class="zone-result" id="fipsResult">
+                <p style="color: #a8d86e; margin-bottom: 0.5rem;">Your FIPS Code:</p>
+                <div class="fips-code" id="fipsCode">-----</div>
+                <p id="fipsLocation" style="color: #c8e6a0; margin-top: 0.5rem;"></p>
+                <p id="fipsExplain" style="color: #888; font-size: 0.85rem; margin-top: 0.5rem;"></p>
+            </div>
+        </section>
+
+        <!-- How to Program Your Radio -->
+        <section class="content-card">
+            <h2>How to Program Your Weather Radio</h2>
+            <p>Once you know your FIPS code, follow these general steps (check your radio's manual for specific instructions):</p>
+
+            <ol>
+                <li><strong>Enter programming mode</strong> - Usually hold a button for 3 seconds or press a "Program" button</li>
+                <li><strong>Select SAME/FIPS mode</strong> - Choose to program by county code</li>
+                <li><strong>Enter your FIPS code</strong> - Type in your 5-digit code</li>
+                <li><strong>Add nearby counties</strong> - Most radios let you program multiple codes (storms don't follow county lines!)</li>
+                <li><strong>Save and exit</strong> - Confirm your settings</li>
+                <li><strong>Test it!</strong> - Wait for the weekly test broadcast on Wednesdays</li>
+            </ol>
+
+            <h3>Pro Tip: Add Extra Counties!</h3>
+            <p>Storms can affect areas just outside your county. Program your county <strong>plus</strong> any neighboring counties for maximum warning time!</p>
+        </section>
+
+        <!-- Why Zones Matter -->
+        <section class="content-card">
+            <h2>Why Zones Matter</h2>
+            <p>Without FIPS programming, your weather radio alerts you for <strong>every</strong> warning in your state - including places hundreds of miles away! That's annoying and can cause "alert fatigue."</p>
+
+            <p>With proper FIPS programming:</p>
+            <ul>
+                <li>You only get alerts for YOUR area</li>
+                <li>You're more likely to pay attention when it beeps</li>
+                <li>You'll know the warning applies to you</li>
+                <li>Your family stays safer!</li>
+            </ul>
+        </section>
+
+        <!-- NWS Forecast Zones -->
+        <section class="content-card">
+            <h2>NWS Forecast Zones</h2>
+            <p>The National Weather Service also uses <strong>forecast zones</strong> that are slightly different from FIPS county codes. These zones help forecasters divide large counties into smaller areas.</p>
+
+            <p>For example, a large county with mountains on one side and desert on the other might have:</p>
+            <ul>
+                <li>Zone 1: Mountain areas (higher elevation, more snow)</li>
+                <li>Zone 2: Valley areas (different weather patterns)</li>
+            </ul>
+
+            <p>Most weather radios work with FIPS county codes, but some advanced models support zone codes too. Check your radio's features!</p>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="quiz-section" id="zoneQuiz">
+            <h3>Test Your Knowledge!</h3>
+            <p style="color: #a8d86e; margin-bottom: 1rem;">Answer 3 questions correctly to earn your <strong>Zone Navigator Badge</strong>!</p>
+
+            <div id="quizContainer">
+                <div class="quiz-question" id="questionText">Loading question...</div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-result" id="quizResult"></div>
+            </div>
+
+            <div id="quizProgress" style="text-align: center; margin-top: 1rem; color: #a8d86e;">
+                Question <span id="currentQ">1</span> of 3 | Score: <span id="score">0</span>/3
+            </div>
+        </section>
+
+        <!-- Printable Card -->
+        <section class="content-card">
+            <h2>My Zone Card</h2>
+            <p>Print this card and fill in your information!</p>
+            <button class="print-btn" onclick="window.print()">🖨️ Print This Card</button>
+
+            <div class="printable-card">
+                <h4>My Weather Radio Zone Information</h4>
+                <table style="width: 100%; margin-top: 1rem;">
+                    <tr>
+                        <td style="padding: 0.5rem;"><strong>My County:</strong></td>
+                        <td style="border-bottom: 1px solid #333; width: 60%;"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;"><strong>My State:</strong></td>
+                        <td style="border-bottom: 1px solid #333;"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;"><strong>My FIPS Code:</strong></td>
+                        <td style="border-bottom: 1px solid #333;"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;"><strong>Nearby County 1:</strong></td>
+                        <td style="border-bottom: 1px solid #333;"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;"><strong>Nearby County 2:</strong></td>
+                        <td style="border-bottom: 1px solid #333;"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;"><strong>My Radio Frequency:</strong></td>
+                        <td style="border-bottom: 1px solid #333;"></td>
+                    </tr>
+                </table>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #2d5016; font-weight: 600;">KidsRadios.com - Be Prepared!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="footer-icon">🕯️</span>
+                <span>KIDS RADIO</span>
+            </div>
+            <p class="footer-tagline">Scout Edition - Knowledge Saves Lives. Be Prepared.</p>
+            <p class="footer-memorial">In Memory of Lahaina - August 8, 2023</p>
+            <p class="copyright">&copy; 2024 KidsRadios.com - Wilderness Weather Training</p>
+        </div>
+    </footer>
+
+    <script src="zones-data.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Populate state dropdown
+        document.addEventListener('DOMContentLoaded', () => {
+            const stateSelect = document.getElementById('stateSelect');
+            const states = getStates();
+
+            states.forEach(state => {
+                const option = document.createElement('option');
+                option.value = state.code;
+                option.textContent = state.name;
+                stateSelect.appendChild(option);
+            });
+
+            initQuiz();
+        });
+
+        // Load counties when state is selected
+        function loadCounties() {
+            const stateCode = document.getElementById('stateSelect').value;
+            const countySelect = document.getElementById('countySelect');
+
+            countySelect.innerHTML = '<option value="">Select your county...</option>';
+            countySelect.disabled = true;
+
+            // Clear search and results
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchResults').style.display = 'none';
+            document.getElementById('fipsResult').classList.remove('show');
+
+            if (stateCode) {
+                const counties = getCounties(stateCode);
+                counties.forEach(county => {
+                    const option = document.createElement('option');
+                    option.value = county.fips;
+                    option.textContent = `${county.name} (${county.city})`;
+                    countySelect.appendChild(option);
+                });
+                countySelect.disabled = false;
+            }
+        }
+
+        // Show FIPS result from dropdown
+        function showFIPSResult() {
+            const fips = document.getElementById('countySelect').value;
+            const stateCode = document.getElementById('stateSelect').value;
+
+            if (fips && stateCode) {
+                const counties = getCounties(stateCode);
+                const county = counties.find(c => c.fips === fips);
+                const stateName = statesData[stateCode].name;
+
+                displayFIPS(fips, county.name, stateName);
+            }
+        }
+
+        // Search for locations
+        function searchLocation() {
+            const query = document.getElementById('searchInput').value.trim();
+            const resultsDiv = document.getElementById('searchResults');
+
+            if (query.length < 2) {
+                resultsDiv.style.display = 'none';
+                return;
+            }
+
+            const results = searchCounties(query);
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = '<p style="color: #888; padding: 1rem;">No results found. Try a different search.</p>';
+            } else {
+                resultsDiv.innerHTML = results.map(r => `
+                    <div class="checklist-item" onclick="selectSearchResult('${r.fips}', '${r.name}', '${r.state}')" style="cursor: pointer;">
+                        <span style="color: #f0b429;">${r.name}</span>
+                        <span style="color: #a8d86e;">${r.city}, ${r.state}</span>
+                        <span style="color: #7ed321; font-family: monospace;">${r.fips}</span>
+                    </div>
+                `).join('');
+            }
+
+            resultsDiv.style.display = 'block';
+        }
+
+        // Select from search results
+        function selectSearchResult(fips, countyName, stateName) {
+            displayFIPS(fips, countyName, stateName);
+            document.getElementById('searchResults').style.display = 'none';
+            document.getElementById('searchInput').value = '';
+        }
+
+        // Display FIPS code
+        function displayFIPS(fips, countyName, stateName) {
+            const explanation = explainFIPS(fips);
+
+            document.getElementById('fipsCode').textContent = formatFIPS(fips);
+            document.getElementById('fipsLocation').textContent = `${countyName}, ${stateName}`;
+            document.getElementById('fipsExplain').textContent = explanation.explanation;
+            document.getElementById('fipsResult').classList.add('show');
+        }
+
+        // Quiz System
+        const zoneQuestions = [
+            {
+                question: "What does FIPS stand for?",
+                options: ["Federal Information Processing Standards", "First Interstate Protection System", "Federal Interstate Programming Service", "Fire Information Processing Standards"],
+                correct: 0
+            },
+            {
+                question: "How many digits are in a FIPS county code?",
+                options: ["3", "4", "5", "6"],
+                correct: 2
+            },
+            {
+                question: "What do the first 2 digits of a FIPS code represent?",
+                options: ["The county", "The state", "The city", "The zip code"],
+                correct: 1
+            },
+            {
+                question: "Why should you program multiple FIPS codes into your weather radio?",
+                options: ["To get more alerts", "Because storms don't follow county lines", "It's required by law", "To hear different stations"],
+                correct: 1
+            },
+            {
+                question: "Without FIPS programming, your weather radio will alert you for:",
+                options: ["Only your city", "Only your county", "Every warning in your state", "No alerts at all"],
+                correct: 2
+            }
+        ];
+
+        let currentQuestion = 0;
+        let quizScore = 0;
+        let questionsAnswered = 0;
+        let shuffledQuestions = [];
+
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function initQuiz() {
+            shuffledQuestions = shuffleArray(zoneQuestions).slice(0, 3);
+            currentQuestion = 0;
+            quizScore = 0;
+            questionsAnswered = 0;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = shuffledQuestions[currentQuestion];
+            document.getElementById('questionText').textContent = q.question;
+            document.getElementById('currentQ').textContent = currentQuestion + 1;
+            document.getElementById('score').textContent = quizScore;
+
+            const optionsDiv = document.getElementById('quizOptions');
+            optionsDiv.innerHTML = '';
+
+            q.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = option;
+                btn.onclick = () => checkQuizAnswer(index);
+                optionsDiv.appendChild(btn);
+            });
+
+            document.getElementById('quizResult').className = 'quiz-result';
+            document.getElementById('quizResult').innerHTML = '';
+        }
+
+        function checkQuizAnswer(selected) {
+            const q = shuffledQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+            const resultDiv = document.getElementById('quizResult');
+
+            options.forEach((opt, i) => {
+                opt.classList.add('disabled');
+                if (i === q.correct) {
+                    opt.classList.add('correct');
+                } else if (i === selected && selected !== q.correct) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            if (selected === q.correct) {
+                quizScore++;
+                document.getElementById('score').textContent = quizScore;
+                resultDiv.innerHTML = "Correct! Great job!";
+                resultDiv.className = 'quiz-result show success';
+            } else {
+                resultDiv.innerHTML = "Not quite. The correct answer is highlighted.";
+                resultDiv.className = 'quiz-result show fail';
+            }
+
+            questionsAnswered++;
+
+            if (questionsAnswered < 3) {
+                setTimeout(() => {
+                    currentQuestion++;
+                    showQuestion();
+                }, 2000);
+            } else {
+                setTimeout(() => {
+                    showFinalResult();
+                }, 2000);
+            }
+        }
+
+        function showFinalResult() {
+            const container = document.getElementById('quizContainer');
+
+            if (quizScore === 3) {
+                container.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🏅</div>
+                        <h3 style="color: #7ed321;">Congratulations!</h3>
+                        <p style="color: #c8e6a0;">You got all 3 questions correct!</p>
+                        <p style="color: #f0b429; font-size: 1.2rem; margin-top: 1rem;">You earned the Zone Navigator Badge!</p>
+                        <button class="next-question-btn" onclick="initQuiz()">Try Again</button>
+                    </div>
+                `;
+                localStorage.setItem('badge_zone', 'true');
+                createConfetti();
+            } else {
+                container.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">📚</div>
+                        <h3 style="color: #f0b429;">Good Try!</h3>
+                        <p style="color: #c8e6a0;">You got ${quizScore} out of 3 correct.</p>
+                        <p style="color: #a8d86e; margin-top: 1rem;">Review the information above and try again!</p>
+                        <button class="next-question-btn" onclick="initQuiz()">Try Again</button>
+                    </div>
+                `;
+            }
+        }
+
+        function createConfetti() {
+            const colors = ['#f0b429', '#7ed321', '#ff6b6b', '#4ecdc4', '#ffe066'];
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+    </script>
+</body>
+</html>

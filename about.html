@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why This Project Exists | Kids Radio - Scout Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Memorial Section Styles */
+        .memorial-hero {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2d3a4a 50%, #1a2a3a 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid #f0b429;
+        }
+
+        .memorial-hero h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .memorial-hero .page-subtitle {
+            color: #e0e0e0;
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        .memorial-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hawaii-note {
+            background: linear-gradient(135deg, #2a3a4a 0%, #1a2a3a 100%);
+            border-left: 4px solid #f0b429;
+            color: #ffffff;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .hawaii-note h2 {
+            color: #f0b429;
+            margin-bottom: 1.5rem;
+        }
+
+        .hawaii-note p {
+            color: #e0e0e0;
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+        }
+
+        .hawaii-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .hawaii-note strong {
+            color: #ffffff;
+        }
+
+        .lessons-card {
+            background: linear-gradient(145deg, #3d6b1c 0%, #2d5016 100%);
+            border: 2px solid #4a7f23;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .lessons-card h2 {
+            color: #f0b429;
+            margin-bottom: 1.5rem;
+        }
+
+        .lessons-card p {
+            color: #c8e6a0;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .lessons-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lessons-card ul li {
+            padding: 1rem 0 1rem 2.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #c8e6a0;
+        }
+
+        .lessons-card ul li strong {
+            color: #ffe066;
+        }
+
+        .lessons-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .lessons-card ul li::before {
+            content: "📻";
+            position: absolute;
+            left: 0;
+            top: 1rem;
+        }
+
+        .help-card {
+            background: linear-gradient(145deg, #4a7c23 0%, #3d6b1c 100%);
+            border: 2px solid #7ed321;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .help-card h2 {
+            color: #ffe066;
+            margin-bottom: 1.5rem;
+        }
+
+        .help-card > p {
+            color: #e8f5d6;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .help-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .help-card ul li {
+            padding: 0.8rem 0 0.8rem 2rem;
+            position: relative;
+            color: #c8e6a0;
+        }
+
+        .help-card ul li strong {
+            color: #ffffff;
+        }
+
+        .help-card ul li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #7ed321;
+            font-weight: bold;
+        }
+
+        .promise-box {
+            background: #2d5016;
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .memorial-card {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2d3a4a 100%);
+            border: 2px solid #f0b429;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .memorial-card h2 {
+            color: #f0b429;
+            margin-bottom: 1.5rem;
+        }
+
+        .memorial-card p {
+            color: #e0e0e0;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .hawaiian-phrase {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #f0b429;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hawaiian-translation {
+            font-size: 1rem;
+            color: #a0a0a0;
+        }
+
+        .mission-card {
+            background: linear-gradient(145deg, #3d6b1c 0%, #2d5016 100%);
+            border: 2px solid #f0b429;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .mission-card h2 {
+            color: #f0b429;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-card h3 {
+            color: #ffe066;
+        }
+
+        .mission-card p {
+            color: #c8e6a0;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .mission-card p strong {
+            color: #ffffff;
+        }
+
+        .mission-card ul {
+            color: #c8e6a0;
+            margin-left: 1.5rem;
+        }
+
+        .mission-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .disclaimer-card {
+            background: linear-gradient(145deg, #6b2a26 0%, #4d1f1c 100%);
+            border: 2px solid #ff6b6b;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .disclaimer-card h2 {
+            color: #ff8888;
+            margin-bottom: 1rem;
+        }
+
+        .disclaimer-card p {
+            color: #ffcccc;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .disclaimer-card p strong {
+            color: #ffffff;
+        }
+
+        .disclaimer-card ul {
+            color: #ffcccc;
+            margin-left: 1.5rem;
+        }
+
+        .disclaimer-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .cta-section .tune-btn {
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            padding: 1rem 2rem;
+        }
+
+        /* ================================
+           Gratitude Section - Scroll Animations
+           ================================ */
+        .gratitude-section {
+            background: linear-gradient(145deg, #0d1804 0%, #1a3009 50%, #0d1804 100%);
+            border: 3px solid #f0b429;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .gratitude-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .gratitude-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(
+                90deg,
+                #f0b429 0%,
+                #f0b429 30%,
+                #00ffff 42%,
+                #ffffff 50%,
+                #00ffff 58%,
+                #f0b429 70%,
+                #f0b429 100%
+            );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer-title 8s ease-in-out infinite;
+        }
+
+        @keyframes shimmer-title {
+            0% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: -100% 50%;
+            }
+        }
+
+        .gratitude-header p {
+            color: #c8e6a0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .gratitude-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gratitude-card {
+            background: linear-gradient(145deg, #2d5016 0%, #1a3009 100%);
+            border: 2px solid #4a7f23;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .gratitude-card:hover {
+            border-color: #f0b429;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(240, 180, 41, 0.2);
+        }
+
+        .gratitude-card.featured {
+            background: linear-gradient(145deg, #2a3a4a 0%, #1a2a3a 100%);
+            border-color: #f0b429;
+            grid-column: span 1;
+        }
+
+        .gratitude-card.featured:hover {
+            box-shadow: 0 15px 50px rgba(240, 180, 41, 0.3);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, #f0b429 0%, #d4940c 100%);
+            color: #1a3009;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .gratitude-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .gratitude-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(
+                90deg,
+                #ffe066 0%,
+                #ffe066 35%,
+                #00ffff 45%,
+                #ffffff 50%,
+                #00ffff 55%,
+                #ffe066 65%,
+                #ffe066 100%
+            );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer-text 6s ease-in-out infinite;
+        }
+
+        @keyframes shimmer-text {
+            0% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: -100% 50%;
+            }
+        }
+
+        .gratitude-role {
+            color: #7ed321;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .gratitude-thanks {
+            color: #c8e6a0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .gratitude-message {
+            background: linear-gradient(145deg, #3d6b1c 0%, #2d5016 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .gratitude-message p {
+            color: #e8f5d6;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .gratitude-message strong {
+            color: #f0b429;
+        }
+
+        /* Fade Animation Classes */
+        .fade-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition-delay: var(--delay, 0s);
+        }
+
+        .fade-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-element.fade-out {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        @media (max-width: 768px) {
+            .memorial-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hawaii-note,
+            .lessons-card,
+            .help-card,
+            .memorial-card,
+            .mission-card {
+                padding: 1.5rem;
+            }
+
+            .gratitude-section {
+                padding: 2rem 1rem;
+            }
+
+            .gratitude-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .gratitude-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gratitude-card {
+                padding: 1.5rem;
+            }
+
+            .gratitude-icon {
+                font-size: 2.5rem;
+            }
+
+            .gratitude-message p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">📻</span>
+                <span>KIDS RADIO</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-icon"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="frequencies.html">Frequencies</a></li>
+                <li><a href="alert-tones.html">Alert Tones</a></li>
+                <li><a href="know-your-zone.html">Know Your Zone</a></li>
+                <li><a href="camping-safety.html">Camping Safety</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Memorial Hero -->
+    <section class="memorial-hero">
+        <span class="memorial-icon">🕯️</span>
+        <h1>Why This Project Exists</h1>
+        <p class="page-subtitle">Born from heartbreak. Built on hope.</p>
+    </section>
+
+    <main>
+        <!-- A Note From Hawaiʻi -->
+        <section class="hawaii-note">
+            <h2>A Note From Hawaiʻi</h2>
+            <p>This project has a special connection to Hawaiʻi, where the creator lives and where the Maui wildfires changed lives forever.</p>
+
+            <p>On August 8, 2023, wind-driven fires swept through Lahaina, Maui, with devastating speed. In just hours, an entire historic town was consumed. The fires became the <strong>deadliest U.S. wildfire in over a century</strong> - taking at least 100 lives, destroying thousands of homes and businesses, and leaving deep grief that stretches across every island in our state.</p>
+
+            <p>Here in Hawaiʻi, that pain is personal. Loved ones were lost. Families were torn apart. Children lost parents. Parents lost children. Entire neighborhoods - places where generations grew up together - disappeared in a single, terrifying day.</p>
+
+            <p>Many families did not receive clear, timely warnings. Many did not realize how fast fire could move when driven by strong winds and dry fuel. When the moment came to evacuate, too many people didn't know it was coming.</p>
+
+            <p><strong>That is why this project exists.</strong></p>
+        </section>
+
+        <!-- What Maui Taught Us -->
+        <section class="lessons-card">
+            <h2>What Maui Taught Us</h2>
+            <p>The Maui fires revealed a painful truth: when one warning system fails, people need another. Sirens, phone alerts, local radio, and NOAA Weather Radio must work together. When power goes out and cell service fails, a simple battery-powered radio - one you already know how to use - can become a lifeline.</p>
+
+            <p>That is why KidsRadios.com focuses on:</p>
+
+            <ul>
+                <li><strong>Practicing how to tune real NOAA Weather Radio stations</strong> and recognize warning tones before you need them</li>
+                <li><strong>Learning what "Watch," "Warning," and "Advisory" truly mean</strong> - and knowing when to shelter, when to prepare, and when to move immediately</li>
+                <li><strong>Building habits that save lives</strong> - keeping a go-bag with a radio, extra batteries, and a family plan for where to go and how to reconnect</li>
+            </ul>
+
+            <p>These skills cannot erase the sadness of what happened on Maui. Nothing can bring back those we lost. But they can help the next generation be better prepared when fire, wind, or storms threaten their own communities.</p>
+        </section>
+
+        <!-- How This Site Can Help -->
+        <section class="help-card">
+            <h2>How This Site Can Help</h2>
+            <p>For kids and families - especially in Hawaiʻi - KidsRadios.com offers a gentle, practical way to talk about what happened while focusing on action and hope.</p>
+
+            <ul>
+                <li><strong>Kids can practice for real</strong> by listening to actual NOAA Weather Radio broadcasts, including the Honolulu station that covers Kauaʻi, Oʻahu, Molokaʻi, Lānaʻi, Maui, and parts of Hawaiʻi Island</li>
+                <li><strong>Parents and scout leaders</strong> can use our quizzes and activities as conversation starters about evacuation routes, high-risk fire days, and where the nearest shelter is</li>
+                <li><strong>Families can build confidence together</strong> so that when a real warning comes, everyone knows what to do</li>
+            </ul>
+
+            <div class="promise-box">
+                Behind every activity on this site is one quiet promise:<br>
+                <strong>The more we understand the sky, the wind, and the warnings, the more chances we have to protect the people we love.</strong>
+            </div>
+        </section>
+
+        <!-- Our Mission -->
+        <section class="mission-card">
+            <h2>Our Mission</h2>
+            <p>KidsRadios.com was created to teach kids, scouts, and families how to listen to real NOAA Weather Radio so they can stay safer during storms, wildfires, and other emergencies.</p>
+
+            <p>The goal is simple: help young people build the confidence to find, understand, and act on official warnings <strong>before</strong> danger is on their doorstep.</p>
+
+            <p>This site does not sell products, ask for donations, or offer paid classes. It exists only to share knowledge - because <strong>knowledge saves lives</strong>.</p>
+
+            <h3 style="margin-top: 2rem; color: #ffe066;">We rely on trusted sources including:</h3>
+            <ul>
+                <li>The National Weather Service</li>
+                <li>NOAA educational resources</li>
+                <li>Established weather-safety and science education organizations</li>
+            </ul>
+            <p>We read and summarize that information in kid-friendly language so children and non-experts can better understand what they are hearing.</p>
+        </section>
+
+        <!-- In Memory -->
+        <section class="memorial-card">
+            <h2>In Memory</h2>
+            <p>To everyone affected by the Maui wildfires - those who lost family, friends, homes, and the places they loved - we carry you with us.</p>
+
+            <p>To the 100+ lives lost in Lahaina: you are not forgotten. Your memory is the reason this work continues.</p>
+
+            <p class="hawaiian-phrase">E ola mau ka haʻaheo o Lahaina.</p>
+            <p class="hawaiian-translation">(May the pride of Lahaina live on.)</p>
+        </section>
+
+        <!-- Partners & Gratitude Section -->
+        <section class="gratitude-section">
+            <div class="gratitude-header fade-element">
+                <h2>With Gratitude</h2>
+                <p>This project wouldn't be possible without the support and resources from these amazing organizations. We are deeply thankful for their contributions to emergency preparedness and public safety.</p>
+            </div>
+
+            <div class="gratitude-grid">
+                <!-- NOAA -->
+                <a href="https://www.noaa.gov/" target="_blank" class="gratitude-card fade-element" style="--delay: 0.1s">
+                    <div class="gratitude-icon">🌊</div>
+                    <h3>NOAA</h3>
+                    <p class="gratitude-role">National Oceanic and Atmospheric Administration</p>
+                    <p class="gratitude-thanks">Thank you for providing the weather data, educational resources, and the NOAA Weather Radio network that forms the foundation of everything we teach.</p>
+                </a>
+
+                <!-- Telnyx -->
+                <a href="https://telnyx.com/" target="_blank" class="gratitude-card fade-element" style="--delay: 0.2s">
+                    <div class="gratitude-icon">📞</div>
+                    <h3>Telnyx</h3>
+                    <p class="gratitude-role">Phone Services & Telecommunications</p>
+                    <p class="gratitude-thanks">A heartfelt thank you to Telnyx for providing exceptional phone services that power our live radio broadcasts. Their reliable telecommunications infrastructure allows us to capture real NOAA Weather Radio signals through phone calls and deliver them directly to families and communities who need them most. Without Telnyx, bringing live weather data to your screen wouldn't be possible.</p>
+                </a>
+
+                <!-- WeatherUSA -->
+                <a href="https://www.weatherusa.net/radio" target="_blank" class="gratitude-card fade-element" style="--delay: 0.3s">
+                    <div class="gratitude-icon">📻</div>
+                    <h3>WeatherUSA</h3>
+                    <p class="gratitude-role">Online Stream Hosting & Archives</p>
+                    <p class="gratitude-thanks">Thank you for hosting and maintaining an incredible library of NOAA Weather Radio station URLs. Your website provides the online stream links that make it possible for us to connect listeners to stations across the entire country, from Boston to Houston to Oklahoma City.</p>
+                </a>
+            </div>
+
+            <div class="gratitude-message fade-element" style="--delay: 0.4s">
+                <p>To everyone who has supported, shared, or used Kids Radio – Scout Edition: <strong>Mahalo nui loa</strong> (Thank you very much). Together, we're building a generation that knows how to listen, prepare, and stay safe.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="content-card">
+            <h2>Start Learning Today</h2>
+            <p>Ready to build the skills that could save lives? Explore our resources:</p>
+            <div class="cta-section">
+                <a href="index.html" class="tune-btn">Listen to Live Stations</a>
+                <a href="alert-tones.html" class="tune-btn">Learn Alert Tones</a>
+                <a href="frequencies.html" class="tune-btn">NOAA Frequencies</a>
+                <a href="camping-safety.html" class="tune-btn">Safety Skills</a>
+            </div>
+        </section>
+
+        <!-- Important Notice -->
+        <section class="disclaimer-card">
+            <h2>Important Notice</h2>
+            <p>Kids Radio – Scout Edition is <strong>not</strong> an official government, scouting, or emergency service website.</p>
+            <p>For real emergencies and official warnings, always rely on:</p>
+            <ul>
+                <li>Local authorities and emergency services</li>
+                <li>The National Weather Service</li>
+                <li>Your own NOAA Weather Radio or official emergency apps</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="footer-icon">🕯️</span>
+                <span>KIDS RADIO</span>
+            </div>
+            <p class="footer-tagline">Scout Edition - Knowledge Saves Lives. Be Prepared.</p>
+            <p class="footer-memorial">In Memory of Lahaina - August 8, 2023</p>
+            <p class="copyright">&copy; 2024 KidsRadios.com - Wilderness Weather Training</p>
+            <div class="footer-about">
+                <p>KidsRadios is a small independent project teaching kids and families how to use weather radios and understand emergency alerts.</p>
+                <p class="contact-line">Contact: <a href="mailto:help@kidsradios.com">help@kidsradios.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Scroll-triggered Fade Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-element');
+
+            // Intersection Observer for fade-in/fade-out on scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: [0, 0.2, 0.5, 0.8, 1]
+            };
+
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Element is coming into view - fade in
+                        entry.target.classList.add('visible');
+                        entry.target.classList.remove('fade-out');
+                    } else {
+                        // Element is leaving view
+                        const rect = entry.boundingClientRect;
+                        if (rect.top < 0) {
+                            // Scrolled past (above viewport) - fade out upward
+                            entry.target.classList.add('fade-out');
+                            entry.target.classList.remove('visible');
+                        } else {
+                            // Below viewport - reset to initial state
+                            entry.target.classList.remove('visible');
+                            entry.target.classList.remove('fade-out');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade elements
+            fadeElements.forEach(el => {
+                fadeObserver.observe(el);
+            });
+
+            // Also add subtle parallax effect to gratitude cards on mouse move
+            const gratitudeSection = document.querySelector('.gratitude-section');
+            if (gratitudeSection) {
+                gratitudeSection.addEventListener('mousemove', (e) => {
+                    const cards = gratitudeSection.querySelectorAll('.gratitude-card');
+                    const rect = gratitudeSection.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                    cards.forEach((card, index) => {
+                        const depth = (index % 3 + 1) * 2;
+                        const moveX = x * depth;
+                        const moveY = y * depth;
+                        card.style.transform = `translateY(-${card.classList.contains('visible') ? 0 : 40}px) translate(${moveX}px, ${moveY}px)`;
+                    });
+                });
+
+                gratitudeSection.addEventListener('mouseleave', () => {
+                    const cards = gratitudeSection.querySelectorAll('.gratitude-card');
+                    cards.forEach(card => {
+                        card.style.transform = '';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

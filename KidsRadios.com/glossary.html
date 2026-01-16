@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Glossary | Kids Radio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">📻</span>
+                <span>KIDS RADIO</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-icon"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="frequencies.html">Frequencies</a></li>
+                <li><a href="alert-tones.html">Alert Tones</a></li>
+                <li><a href="know-your-zone.html">Know Your Zone</a></li>
+                <li><a href="camping-safety.html">Camping Safety</a></li>
+                <li><a href="glossary.html" class="active">Glossary</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <span class="page-hero-icon">📖</span>
+        <h1>Weather Glossary</h1>
+        <p class="page-subtitle">Learn the language of weather</p>
+    </section>
+
+    <main>
+        <!-- Search -->
+        <section style="max-width: 600px; margin: 0 auto 2rem auto;">
+            <input type="text" class="glossary-search" id="searchInput" placeholder="Search for a term..." oninput="filterTerms()">
+        </section>
+
+        <!-- Glossary Terms -->
+        <section class="content-card">
+            <h2>A-Z Weather Terms</h2>
+
+            <dl id="glossaryList">
+                <!-- A -->
+                <div class="glossary-term" data-term="advisory">
+                    <dt>Advisory</dt>
+                    <dd>A weather statement that warns of conditions that may cause inconvenience but are not immediately dangerous. Less severe than a Watch or Warning. Example: "Wind Advisory" means gusty winds are expected.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="air pressure barometric pressure">
+                    <dt>Air Pressure (Barometric Pressure)</dt>
+                    <dd>The weight of air pushing down on Earth. Measured in inches of mercury (inHg) or millibars. Falling pressure often means storms are coming; rising pressure usually means fair weather.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="attention signal 1050 hz">
+                    <dt>Attention Signal (1050 Hz)</dt>
+                    <dd>A steady 1050 Hz tone that plays on NOAA Weather Radio for 8-10 seconds before important alerts. When you hear this tone, pay attention - important information follows!</dd>
+                </div>
+
+                <!-- B -->
+                <div class="glossary-term" data-term="blizzard">
+                    <dt>Blizzard</dt>
+                    <dd>A severe winter storm with strong winds (35+ mph), heavy snow, and very low visibility (less than 1/4 mile) lasting at least 3 hours. Very dangerous conditions!</dd>
+                </div>
+
+                <!-- C -->
+                <div class="glossary-term" data-term="cumulonimbus">
+                    <dt>Cumulonimbus</dt>
+                    <dd>Tall, towering thunderstorm clouds that can reach 40,000+ feet high. These clouds produce lightning, heavy rain, hail, and sometimes tornadoes. They look like giant cauliflower or anvils.</dd>
+                </div>
+
+                <!-- D -->
+                <div class="glossary-term" data-term="doppler radar">
+                    <dt>Doppler Radar</dt>
+                    <dd>A special type of weather radar that can detect not just where rain is, but also how fast it's moving. This helps forecasters see rotation in storms that might produce tornadoes.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="downburst">
+                    <dt>Downburst</dt>
+                    <dd>A powerful downdraft of air from a thunderstorm that spreads out when it hits the ground, creating strong straight-line winds (60+ mph). Can cause damage similar to a tornado.</dd>
+                </div>
+
+                <!-- E -->
+                <div class="glossary-term" data-term="eas emergency alert system">
+                    <dt>EAS (Emergency Alert System)</dt>
+                    <dd>A national public warning system that broadcasts emergency alerts on TV, radio, and cable. You've probably heard the test: "This is a test of the Emergency Alert System..."</dd>
+                </div>
+
+                <div class="glossary-term" data-term="eom end of message">
+                    <dt>EOM (End of Message)</dt>
+                    <dd>Three short tones that signal the end of an emergency broadcast on weather radio. When you hear EOM, the alert message is complete.</dd>
+                </div>
+
+                <!-- F -->
+                <div class="glossary-term" data-term="fips federal information processing standards">
+                    <dt>FIPS (Federal Information Processing Standards)</dt>
+                    <dd>A 5-digit code that identifies each county in the United States. Used to program weather radios so they only alert for your specific area. First 2 digits = state, last 3 = county.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="flash flood">
+                    <dt>Flash Flood</dt>
+                    <dd>A rapid rise of water, usually within 6 hours of heavy rain. Very dangerous because they happen so fast! Most flash flood deaths occur when people try to drive through flooded roads.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="front cold front warm front">
+                    <dt>Front (Cold Front / Warm Front)</dt>
+                    <dd>The boundary between two air masses. A cold front is where cold air pushes under warm air (often brings storms). A warm front is where warm air slides over cold air (often brings rain).</dd>
+                </div>
+
+                <div class="glossary-term" data-term="funnel cloud">
+                    <dt>Funnel Cloud</dt>
+                    <dd>A rotating column of air hanging from a cloud that hasn't touched the ground. If it touches down, it becomes a tornado!</dd>
+                </div>
+
+                <!-- H -->
+                <div class="glossary-term" data-term="hail">
+                    <dt>Hail</dt>
+                    <dd>Balls or chunks of ice that fall from thunderstorms. Forms when raindrops are carried up into freezing air repeatedly. Severe hail is 1 inch or larger (quarter-sized or bigger).</dd>
+                </div>
+
+                <div class="glossary-term" data-term="heat index">
+                    <dt>Heat Index</dt>
+                    <dd>What the temperature "feels like" when humidity is combined with air temperature. High humidity makes hot days feel even hotter and more dangerous.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="humidity">
+                    <dt>Humidity</dt>
+                    <dd>The amount of water vapor in the air. 100% humidity means the air can't hold any more water. High humidity makes it harder for sweat to evaporate, making you feel hotter.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="hurricane">
+                    <dt>Hurricane</dt>
+                    <dd>A large tropical storm with sustained winds of 74 mph or more. They form over warm ocean water and can be hundreds of miles wide. Called "typhoons" in the Pacific Ocean.</dd>
+                </div>
+
+                <!-- L -->
+                <div class="glossary-term" data-term="lightning">
+                    <dt>Lightning</dt>
+                    <dd>A giant electrical spark between clouds or between a cloud and the ground. Lightning can be hotter than the surface of the sun (50,000°F)! Always seek shelter when lightning is near.</dd>
+                </div>
+
+                <!-- M -->
+                <div class="glossary-term" data-term="mesocyclone">
+                    <dt>Mesocyclone</dt>
+                    <dd>A rotating updraft inside a severe thunderstorm. Doppler radar can detect these. Mesocyclones can produce tornadoes.</dd>
+                </div>
+
+                <!-- N -->
+                <div class="glossary-term" data-term="noaa national oceanic atmospheric administration">
+                    <dt>NOAA</dt>
+                    <dd>National Oceanic and Atmospheric Administration - the government agency that runs the National Weather Service and NOAA Weather Radio. They're the experts who forecast the weather!</dd>
+                </div>
+
+                <div class="glossary-term" data-term="nws national weather service">
+                    <dt>NWS (National Weather Service)</dt>
+                    <dd>Part of NOAA that provides weather forecasts, warnings, and other weather information for the United States. They operate the network of weather radio stations.</dd>
+                </div>
+
+                <!-- O -->
+                <div class="glossary-term" data-term="outlook">
+                    <dt>Outlook</dt>
+                    <dd>A forecast of general weather conditions expected over the next few days. Less specific than a Watch or Warning. Example: "Severe weather outlook for Tuesday."</dd>
+                </div>
+
+                <!-- P -->
+                <div class="glossary-term" data-term="precipitation">
+                    <dt>Precipitation</dt>
+                    <dd>Any form of water that falls from clouds - rain, snow, sleet, hail, or freezing rain. Measured in inches.</dd>
+                </div>
+
+                <!-- R -->
+                <div class="glossary-term" data-term="radar">
+                    <dt>Radar</dt>
+                    <dd>A system that sends out radio waves that bounce off rain and other precipitation. Used to track storms, measure rainfall, and detect severe weather.</dd>
+                </div>
+
+                <!-- S -->
+                <div class="glossary-term" data-term="same specific area message encoding">
+                    <dt>SAME (Specific Area Message Encoding)</dt>
+                    <dd>The digital code sent at the start of weather alerts that tells your radio what type of alert it is and what area it affects. It's the "buzzing" sound you hear before alerts.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="severe thunderstorm">
+                    <dt>Severe Thunderstorm</dt>
+                    <dd>A thunderstorm that produces one or more of: hail 1 inch or larger, winds 58 mph or stronger, or a tornado. These storms can cause significant damage and injury.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="squall line">
+                    <dt>Squall Line</dt>
+                    <dd>A line of thunderstorms that can stretch for hundreds of miles. Often brings damaging winds and heavy rain as it moves through an area.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="storm surge">
+                    <dt>Storm Surge</dt>
+                    <dd>A rise in sea level caused by a hurricane's winds pushing water toward shore. Storm surge is the deadliest part of hurricanes - water can rise 20+ feet!</dd>
+                </div>
+
+                <div class="glossary-term" data-term="supercell">
+                    <dt>Supercell</dt>
+                    <dd>A severe thunderstorm with a deep, rotating updraft. Supercells produce the most violent tornadoes, large hail, and damaging winds. The most dangerous type of thunderstorm.</dd>
+                </div>
+
+                <!-- T -->
+                <div class="glossary-term" data-term="thunder">
+                    <dt>Thunder</dt>
+                    <dd>The sound caused by lightning. Lightning heats the air so fast it explodes, creating a shockwave we hear as thunder. If you hear thunder, lightning is close enough to strike you!</dd>
+                </div>
+
+                <div class="glossary-term" data-term="tornado">
+                    <dt>Tornado</dt>
+                    <dd>A violently rotating column of air extending from a thunderstorm to the ground. Tornadoes can have winds over 300 mph and cause extreme destruction. Seek shelter immediately!</dd>
+                </div>
+
+                <div class="glossary-term" data-term="tropical storm">
+                    <dt>Tropical Storm</dt>
+                    <dd>An organized storm with sustained winds between 39-73 mph. If winds increase to 74 mph, it becomes a hurricane. Still very dangerous with heavy rain and flooding.</dd>
+                </div>
+
+                <!-- V -->
+                <div class="glossary-term" data-term="vhf very high frequency">
+                    <dt>VHF (Very High Frequency)</dt>
+                    <dd>The radio frequency band (30-300 MHz) where NOAA Weather Radio broadcasts. All 7 weather radio channels are in the VHF band between 162.400 and 162.550 MHz.</dd>
+                </div>
+
+                <!-- W -->
+                <div class="glossary-term" data-term="wall cloud">
+                    <dt>Wall Cloud</dt>
+                    <dd>A lowering from the base of a thunderstorm. Wall clouds often rotate and can produce tornadoes. If you see a rotating wall cloud, seek shelter immediately!</dd>
+                </div>
+
+                <div class="glossary-term" data-term="warning">
+                    <dt>Warning</dt>
+                    <dd>The most serious alert level. Means hazardous weather is occurring or about to occur. Take action immediately! Example: "Tornado Warning" means a tornado has been spotted or detected.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="watch">
+                    <dt>Watch</dt>
+                    <dd>Means conditions are favorable for hazardous weather to develop. Be prepared and stay alert! Example: "Tornado Watch" means tornadoes are possible in your area.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="wind chill">
+                    <dt>Wind Chill</dt>
+                    <dd>What the temperature "feels like" when wind is combined with cold air. Wind removes heat from your body faster, making it feel colder than the actual temperature.</dd>
+                </div>
+
+                <div class="glossary-term" data-term="winter storm">
+                    <dt>Winter Storm</dt>
+                    <dd>A storm that produces significant snow, ice, or sleet. Can make travel dangerous or impossible. Winter Storm Warnings mean heavy snow (6+ inches) or ice is expected.</dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- Alert Levels Quick Reference -->
+        <section class="content-card" style="border-color: #f0b429;">
+            <h2>Alert Levels: Quick Reference</h2>
+
+            <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+                <div style="background: rgba(255, 107, 107, 0.2); padding: 1rem; border-radius: 10px; border-left: 4px solid #ff6b6b;">
+                    <strong style="color: #ff6b6b;">WARNING</strong>
+                    <p style="margin-top: 0.3rem;">Danger is happening NOW or about to happen. Take action immediately!</p>
+                </div>
+
+                <div style="background: rgba(240, 180, 41, 0.2); padding: 1rem; border-radius: 10px; border-left: 4px solid #f0b429;">
+                    <strong style="color: #f0b429;">WATCH</strong>
+                    <p style="margin-top: 0.3rem;">Conditions are right for danger. Be prepared and stay alert!</p>
+                </div>
+
+                <div style="background: rgba(78, 205, 196, 0.2); padding: 1rem; border-radius: 10px; border-left: 4px solid #4ecdc4;">
+                    <strong style="color: #4ecdc4;">ADVISORY</strong>
+                    <p style="margin-top: 0.3rem;">Minor inconvenience expected. Use caution but not immediately dangerous.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="footer-icon">🕯️</span>
+                <span>KIDS RADIO</span>
+            </div>
+            <p class="footer-tagline">Scout Edition - Knowledge Saves Lives. Be Prepared.</p>
+            <p class="footer-memorial">In Memory of Lahaina - August 8, 2023</p>
+            <p class="copyright">&copy; 2024 KidsRadios.com - Wilderness Weather Training</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Filter glossary terms
+        function filterTerms() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const terms = document.querySelectorAll('.glossary-term');
+
+            terms.forEach(term => {
+                const searchText = term.getAttribute('data-term');
+                const dt = term.querySelector('dt').textContent.toLowerCase();
+                const dd = term.querySelector('dd').textContent.toLowerCase();
+
+                if (searchText.includes(query) || dt.includes(query) || dd.includes(query)) {
+                    term.style.display = 'block';
+                } else {
+                    term.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
